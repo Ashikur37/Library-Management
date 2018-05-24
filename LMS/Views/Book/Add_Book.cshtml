@@ -1,0 +1,82 @@
+﻿@model LEntity.Book
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Add_Book</title>
+    <link href="~/Contents/bootstrap-theme.css" rel="stylesheet" />
+<link href="~/Contents/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    @using (Html.BeginForm()) {
+        @Html.ValidationSummary(true)
+    
+        <fieldset>
+            <legend>Book</legend>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Name)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Name)
+                @Html.ValidationMessageFor(model => model.Name)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Category)
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("Category","select Category") 
+                </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Authors)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Authors)
+                @Html.ValidationMessageFor(model => model.Authors)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Copy)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Copy)
+                @Html.ValidationMessageFor(model => model.Copy)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Desk)
+            </div>
+            <div class="editor-field">
+                 @Html.DropDownList("Desk","select Desk") 
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Issuable)
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("Issuable", new List<SelectListItem> { 
+                new SelectListItem{Text="Yes",Value="1"},
+                 new SelectListItem{Text="No",Value="0"}
+           }
+                )
+            </div>
+    
+            <p>
+                <input type="submit" value="Create" />
+            </p>
+        </fieldset>
+    }
+    
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+﻿@model LEntity.Book
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Borrow</title>
+    <link href="~/Contents/bootstrap-theme.css" rel="stylesheet" />
+<link href="~/Contents/bootstrap.css" rel="stylesheet" />
+</head>
+<body class="jumbotron">
+     <div style="margin-left:40%">
+            
+                <span class="btn btn-default">@Html.ActionLink("Serch Book", "Searchbook")  </span>
+         <span class="btn btn-default">@Html.ActionLink("All Book", "AllBook")  </span>
+                <span class="btn btn-default">@Html.ActionLink("Borrow History", "BorrowHistory")  </span>
+                <span class="btn btn-default">@Html.ActionLink("Update Password", "ChangePassword","User")  </span>
+                <span class="btn btn-default">@Html.ActionLink("Logout", "Logout","User")  </span>
+           
+        </div>
+    <fieldset>
+        <legend>Book</legend>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.Name)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Name)
+        </div>
+    
+    </fieldset>
+    <p>
+        @Html.ActionLink("  Confirm Borrow", "ConfirmBorrow", new { id=Model.ID }) |
+        @Html.ActionLink("Go Home", "Index")
+    </p>
+</body>
+</html>

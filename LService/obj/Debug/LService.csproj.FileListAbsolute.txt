@@ -1,0 +1,11 @@
+C:\Users\Piash\Desktop\New folder (4)\LMS\LService\obj\Debug\LService.csprojResolveAssemblyReference.cache
+C:\Users\Piash\Desktop\New folder (4)\LMS\LService\bin\Debug\LService.dll
+C:\Users\Piash\Desktop\New folder (4)\LMS\LService\bin\Debug\LService.pdb
+C:\Users\Piash\Desktop\New folder (4)\LMS\LService\bin\Debug\LData.dll
+C:\Users\Piash\Desktop\New folder (4)\LMS\LService\bin\Debug\LEntity.dll
+C:\Users\Piash\Desktop\New folder (4)\LMS\LService\bin\Debug\EntityFramework.dll
+C:\Users\Piash\Desktop\New folder (4)\LMS\LService\bin\Debug\LData.pdb
+C:\Users\Piash\Desktop\New folder (4)\LMS\LService\bin\Debug\LEntity.pdb
+C:\Users\Piash\Desktop\New folder (4)\LMS\LService\bin\Debug\EntityFramework.xml
+C:\Users\Piash\Desktop\New folder (4)\LMS\LService\obj\Debug\LService.dll
+C:\Users\Piash\Desktop\New folder (4)\LMS\LService\obj\Debug\LService.pdb

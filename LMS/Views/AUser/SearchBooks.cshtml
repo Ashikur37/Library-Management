@@ -1,0 +1,91 @@
+﻿@model IEnumerable<LEntity.Book>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SearchBooks</title>
+    <link href="~/Contents/bootstrap-theme.css" rel="stylesheet" />
+<link href="~/Contents/bootstrap.css" rel="stylesheet" />
+</head>
+<body class="jumbotron">
+     <div style="margin-left:40%">
+            
+                <span class="btn btn-default">@Html.ActionLink("Serch Book", "Searchbook")  </span>
+         <span class="btn btn-default">@Html.ActionLink("All Book", "AllBook")  </span>
+                <span class="btn btn-default">@Html.ActionLink("Borrow History", "BorrowHistory")  </span>
+                <span class="btn btn-default">@Html.ActionLink("Update Password", "ChangePassword","User")  </span>
+                <span class="btn btn-default">@Html.ActionLink("Logout", "Logout","User")  </span>
+           
+        </div>
+    
+    <table class="table table-striped" style="width:80%; margin-left:10%;">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Authors)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Copy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Desk)
+            </th>
+            
+            <th>Borrow</th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @foreach (var it in ViewBag.cat_list)
+                {
+                    if (it.ID == item.Category)
+                    { 
+                      @(it.Name)
+                    }
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Authors)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Copy)
+            </td>
+            <td>
+                @foreach (var it in ViewBag.dlist)
+                {
+                    if (it.ID == item.Desk)
+                    { 
+                      @(it.Name)
+                    }
+                }
+
+            </td>
+            
+            <td>
+                @if (item.Issuable==1){
+                    @Html.ActionLink("Borrow", "Borrow", new { id=item.ID })} 
+                @if (item.Issuable==0) {
+                        @Html.Label("Unborrowable")
+                }
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

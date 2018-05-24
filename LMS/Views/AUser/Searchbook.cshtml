@@ -1,0 +1,34 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Searchbook</title>
+    <link href="~/Contents/bootstrap-theme.css" rel="stylesheet" />
+<link href="~/Contents/bootstrap.css" rel="stylesheet" />
+</head>
+<body class="jumbotron">
+     <div style="margin-left:40%">
+            
+                <span class="btn btn-default">@Html.ActionLink("Serch Book", "Searchbook")  </span>
+         <span class="btn btn-default">@Html.ActionLink("All Book", "AllBook")  </span>
+                <span class="btn btn-default">@Html.ActionLink("Borrow History", "BorrowHistory")  </span>
+                 <span class="btn btn-default">@Html.ActionLink("Update Password", "ChangePassword","User")  </span>
+                <span class="btn btn-default">@Html.ActionLink("Logout", "Logout","User")  </span>
+           
+        </div>
+           @using (Html.BeginForm("SearchBook","AUser")) {
+              <label>Enter Keyword</label> 
+        <input type="text" name="key" /><br />
+        
+        <input type="submit" value="Search" /><br /><br />
+        }
+  
+    
+
+</body>
+</html>

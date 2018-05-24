@@ -1,0 +1,116 @@
+﻿@model IEnumerable<LEntity.Borrow>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<link href="~/Contents/bootstrap-theme.css" rel="stylesheet" />
+<link href="~/Contents/bootstrap.css" rel="stylesheet" />
+<html>
+<head>
+
+
+    <meta name="viewport" content="width=device-width" />
+    <title>BorrowHistory</title>
+</head>
+<body class="jumbotron">
+    
+    <div style="margin-left:40%; margin-top:-30px;" >
+        <span class="btn btn-info">@Html.ActionLink("Books", "Book")  </span>
+
+        <span class="btn btn-info">@Html.ActionLink("Borrow Details", "Borrowdetails")  </span>
+        <span class="btn btn-info">@Html.ActionLink("View Users", "User")  </span>
+         <span class="btn btn-default">@Html.ActionLink("Update Password", "ChangePassword","User")  </span>
+        <span class="btn btn-info">@Html.ActionLink("Logout", "Logout","User")  </span>
+    </div>
+        
+    
+
+</table>
+    <table style="width:80%; margin-left:10%; text-align:center" class="table table-striped">
+        <tr>
+            <th>
+                @Html.Label("Book Name")
+            </th>
+           <th>
+                @Html.Label("Borrower")
+            </th>
+            <th>
+                @Html.Label("Borrow Time")
+            </th>
+            <th>
+                @Html.Label("Return Time")
+            </th>
+            <th>
+               @Html.Label("Status")
+            </th>
+            <th>
+              @Html.Label("Expire Time")
+            </th>
+            <th>
+              @Html.Label("Return")
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @foreach (var it in ViewBag.blist)
+                {
+                    if (item.Book== it.ID)
+                    { 
+                        @(it.Name)
+                    }
+                }
+            </td>
+            <td>
+                @foreach (var it in ViewBag.ulist)
+                {
+                    if (item.Borrower== it.ID)
+                    { 
+                        @(it.User_Name)
+                    }
+                }
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.Bdate)
+            </td>
+            <td>
+                @if (item.Rdate.ToString() == "1/1/0001 12:00:00 AM")
+                { 
+                @Html.Label("TBA", "TBA", new { style="background-color:red"})
+                }
+                 @if (item.Rdate.ToString() != "1/1/0001 12:00:00 AM")
+                { 
+                @Html.DisplayFor(modelItem => item.Rdate)
+                }
+            </td>
+            <td>
+                @if (item.Status == 0)
+                {
+                    @Html.Label("NotReturned", "Not Returned", new { style="background-color:red"})
+                }
+                 @if (item.Status == 1)
+                {   
+                    @Html.Label("Returned", "Returned", new { style="background-color:green"})
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Edate)
+                 
+            </td>
+            <td>@if (item.Status == 0)
+                {
+                    @Html.ActionLink("Return", "Return", new { id=item.ID }) 
+                }
+                
+            </td>
+        </tr>
+    }
+   
+    </table>
+</body>
+</html>

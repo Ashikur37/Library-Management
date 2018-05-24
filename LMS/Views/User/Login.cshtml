@@ -1,0 +1,12 @@
+﻿@model  LEntity.User
+@{
+    ViewBag.Title = "Login ";
+}
+<link href="~/Contents/bootstrap-theme.css" rel="stylesheet" />
+<link href="~/Contents/bootstrap.css" rel="stylesheet" />
+<h2>Login Failed</h2>
+@Html.DisplayFor(model => model.Type)
+@Html.Label("error", "Invalid username or password", new { style="color:red"})
+<br/>
+@Html.ActionLink("Try Again", "Index") 
+@Html.ActionLink("Register Now", "Signup") 

@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<link href="~/Contents/bootstrap-theme.css" rel="stylesheet" />
+<link href="~/Contents/bootstrap.css" rel="stylesheet" />
+<h2>Welcome Admin</h2>
+<body class="jumbotron">
+    
+    <div style="margin-left:40%; margin-top:-30px;" >
+        <span class="btn btn-info">@Html.ActionLink("Books", "Book")  </span>
+
+        <span class="btn btn-info">@Html.ActionLink("Borrow Details", "Borrowdetails")  </span>
+        <span class="btn btn-info">@Html.ActionLink("View Users", "User")  </span>
+         <span class="btn btn-default">@Html.ActionLink("Update Password", "ChangePassword","User")  </span>
+        <span class="btn btn-info">@Html.ActionLink("Logout", "Logout","User")  </span>
+    </div>
+    </body>

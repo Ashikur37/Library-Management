@@ -1,0 +1,86 @@
+﻿@model IEnumerable<LEntity.Book>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Contents/bootstrap-theme.css" rel="stylesheet" />
+<link href="~/Contents/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+ <div>
+     <table style="width:100%">
+    <tr>
+        
+        <td>@Html.ActionLink("Add Book", "Add_Book")  </td>
+        <td>@Html.ActionLink("Edit Book", "Edit_Book")  </td>
+        
+        <td>@Html.ActionLink("Book Stat", "Stat")  </td>
+        <td class="btn btn-default">@Html.ActionLink("Logout", "Logout","User")  </td>
+    </tr>
+
+</table>
+
+ </div>   
+
+        
+        <table border="1" style="text-align:center; width:80%;margin-left:10%;">
+        <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Authors</th>
+            <th>Available Copy</th>
+            <th>Desk</th>
+            <th>Issuable</th>
+        </tr>
+        @foreach (var item in Model) {
+        <tr>
+            <td> @Html.DisplayFor(model => item.Name)</td>
+            
+
+            <td>    @foreach (var it in ViewBag.cat_list)
+                {
+                    if (it.ID == item.Category)
+                    { 
+                      @(it.Name)
+                    }
+                }
+
+            </td>
+           
+            <td> @Html.DisplayFor(model => item.Authors) </td>
+           
+            <td>  @Html.DisplayFor(model => item.Copy)</td>
+           
+            <td>   @foreach (var it in ViewBag.dlist)
+                {
+                    if (it.ID == item.Desk)
+                    { 
+                      @(it.Name)
+                    }
+                }</td>
+           
+            <td>  @if (item.Issuable==1){
+                    @Html.Label("Yes")} 
+                @if (item.Issuable==0) {
+                        @Html.Label("No")
+                }</td>
+           
+        
+             </tr>
+        }
+        </table>
+   
+    <p>
+      
+       
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

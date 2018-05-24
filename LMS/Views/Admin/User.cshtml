@@ -1,0 +1,81 @@
+﻿@model IEnumerable<LEntity.User>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>User</title>
+    <link href="~/Contents/bootstrap-theme.css" rel="stylesheet" />
+<link href="~/Contents/bootstrap.css" rel="stylesheet" />
+</head>
+<body class="jumbotron">
+    
+    <div style="margin-left:40%; margin-top:-30px;" >
+        <span class="btn btn-info">@Html.ActionLink("Books", "Book")  </span>
+
+        <span class="btn btn-info">@Html.ActionLink("Borrow Details", "Borrowdetails")  </span>
+        <span class="btn btn-info">@Html.ActionLink("View Users", "User")  </span>
+         <span class="btn btn-default">@Html.ActionLink("Update Password", "ChangePassword","User")  </span>
+        <span class="btn btn-info">@Html.ActionLink("Logout", "Logout","User")  </span>
+    </div>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table table-striped">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.User_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mobile)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Type)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model)
+    {
+        
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.User_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mobile)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @if(item.Type==-1){
+                @Html.ActionLink("UnBlock", "UnBlock", new { id=item.ID }) }
+                @if(item.Type==-0) {
+                @Html.ActionLink("Block", "Block", new { id=item.ID }) }|
+                @Html.ActionLink("Details", "Details", new { id=item.ID }) 
+               
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

@@ -1,0 +1,12 @@
+C:\Users\Piash\Desktop\New folder (4)\LMS\LData\bin\Debug\LData.dll
+C:\Users\Piash\Desktop\New folder (4)\LMS\LData\bin\Debug\LData.pdb
+C:\Users\Piash\Desktop\New folder (4)\LMS\LData\obj\Debug\LData.csprojResolveAssemblyReference.cache
+C:\Users\Piash\Desktop\New folder (4)\LMS\LData\obj\Debug\LData.dll
+C:\Users\Piash\Desktop\New folder (4)\LMS\LData\obj\Debug\LData.pdb
+C:\Users\Piash\Desktop\New folder (4)\LMS\LData\bin\Debug\LData.dll.config
+C:\Users\Piash\Desktop\New folder (4)\LMS\LData\bin\Debug\EntityFramework.dll
+C:\Users\Piash\Desktop\New folder (4)\LMS\LData\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Piash\Desktop\New folder (4)\LMS\LData\bin\Debug\LEntity.dll
+C:\Users\Piash\Desktop\New folder (4)\LMS\LData\bin\Debug\LEntity.pdb
+C:\Users\Piash\Desktop\New folder (4)\LMS\LData\bin\Debug\EntityFramework.xml
+C:\Users\Piash\Desktop\New folder (4)\LMS\LData\bin\Debug\EntityFramework.SqlServer.xml

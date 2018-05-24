@@ -1,0 +1,9 @@
+C:\Users\Piash\Desktop\New folder (4)\LMS\LEntity\bin\Debug\LEntity.dll.config
+C:\Users\Piash\Desktop\New folder (4)\LMS\LEntity\bin\Debug\LEntity.dll
+C:\Users\Piash\Desktop\New folder (4)\LMS\LEntity\bin\Debug\LEntity.pdb
+C:\Users\Piash\Desktop\New folder (4)\LMS\LEntity\bin\Debug\EntityFramework.dll
+C:\Users\Piash\Desktop\New folder (4)\LMS\LEntity\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Piash\Desktop\New folder (4)\LMS\LEntity\bin\Debug\EntityFramework.xml
+C:\Users\Piash\Desktop\New folder (4)\LMS\LEntity\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Piash\Desktop\New folder (4)\LMS\LEntity\obj\Debug\LEntity.dll
+C:\Users\Piash\Desktop\New folder (4)\LMS\LEntity\obj\Debug\LEntity.pdb
